@@ -1,0 +1,215 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Luckiest Guy", cursive;
+      background: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Moldura colorida ── */
+    .frame-wrapper {
+      position: relative;
+      width: 900px;
+      height: 620px;
+      background: #fff;
+    }
+
+    /* Blocos de cor nas bordas — replicam o padrão da imagem */
+    .frame-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        /* TOPO */
+        linear-gradient(#e85d04 0% 100%) 0     0    / 120px 22px no-repeat,
+        linear-gradient(#f7c948 0% 100%) 120px 0    / 90px  22px no-repeat,
+        linear-gradient(#e63946 0% 100%) 210px 0    / 220px 22px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 430px 0    / 50px  22px no-repeat,
+        linear-gradient(#e63946 0% 100%) 480px 0    / 140px 22px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 620px 0    / 100px 22px no-repeat,
+        linear-gradient(#f7c948 0% 100%) 720px 0    / 60px  22px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 780px 0    / 120px 22px no-repeat,
+
+        /* FUNDO */
+        linear-gradient(#4cc9f0 0% 100%) 0     598px / 130px 22px no-repeat,
+        linear-gradient(#e63946 0% 100%) 130px 598px / 80px  22px no-repeat,
+        linear-gradient(#e85d04 0% 100%) 210px 598px / 60px  22px no-repeat,
+        linear-gradient(#f7c948 0% 100%) 270px 598px / 120px 22px no-repeat,
+        linear-gradient(#e63946 0% 100%) 390px 598px / 100px 22px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 490px 598px / 200px 22px no-repeat,
+        linear-gradient(#6abf69 0% 100%) 690px 598px / 90px  22px no-repeat,
+        linear-gradient(#f7c948 0% 100%) 780px 598px / 60px  22px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 840px 598px / 60px  22px no-repeat,
+
+        /* ESQUERDA */
+        linear-gradient(#4cc9f0 0% 100%) 0 22px  / 22px 80px  no-repeat,
+        linear-gradient(#e63946 0% 100%) 0 102px / 22px 120px no-repeat,
+        linear-gradient(#6abf69 0% 100%) 0 222px / 22px 80px  no-repeat,
+        linear-gradient(#e85d04 0% 100%) 0 302px / 22px 100px no-repeat,
+        linear-gradient(#f7c948 0% 100%) 0 402px / 22px 80px  no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 0 482px / 22px 116px no-repeat,
+
+        /* DIREITA */
+        linear-gradient(#f7c948 0% 100%) 878px 22px  / 22px 110px no-repeat,
+        linear-gradient(#4cc9f0 0% 100%) 878px 132px / 22px 80px  no-repeat,
+        linear-gradient(#e63946 0% 100%) 878px 212px / 22px 60px  no-repeat,
+        linear-gradient(#6abf69 0% 100%) 878px 272px / 22px 100px no-repeat,
+        linear-gradient(#e85d04 0% 100%) 878px 372px / 22px 80px  no-repeat,
+        linear-gradient(#f7c948 0% 100%) 878px 452px / 22px 146px no-repeat;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Área interna branca */
+    .inner-card {
+      position: absolute;
+      inset: 22px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Logo */
+    .logo-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, #e8e8f0, #c8c8d8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      overflow: hidden;
+    }
+
+    .logo-inner {
+      text-align: center;
+      line-height: 1;
+    }
+
+    .logo-text-top {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .logo-text-top span:nth-child(1) { color: #e63946; }
+    .logo-text-top span:nth-child(2) { color: #3a86ff; }
+    .logo-text-top span:nth-child(3) { color: #e63946; }
+    .logo-text-top span:nth-child(4) { color: #3a86ff; }
+    .logo-text-top span:nth-child(5) { color: #f7c948; }
+    .logo-text-top span:nth-child(6) { color: #6abf69; }
+
+    .logo-icon {
+      margin: 4px auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #e63946;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+    }
+
+    .logo-subtitle {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1d3557;
+    }
+
+    /* Título abaixo da logo */
+    .brand-title {
+      font-size: 17px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #1d3557;
+      margin-bottom: 28px;
+    }
+
+    /* Formulário */
+    .login-form {
+      width: 280px;
+    }
+
+    .login-form label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #333;
+      margin-bottom: 3px;
+    }
+
+    .login-form .form-control {
+      border-radius: 16px;
+      border: 1.5px solid #bbb;
+      font-size: 13px;
+      height: 34px;
+      background: #fff;
+      transition: border-color .2s;
+    }
+
+    .login-form .form-control:focus {
+      border-color: #3a86ff;
+      box-shadow: 0 0 0 3px rgba(58,134,255,.15);
+    }
+
+    .forgot-link {
+      font-size: 10px;
+      font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      display: block;
+      margin-top: 4px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    .forgot-link:hover { color: #e63946; text-decoration: underline; }
+
+    .btn-entrar {
+      background: #3a86ff;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      padding: 7px 32px;
+      transition: background .2s, transform .1s;
+    }
+    .btn-entrar:hover {
+      background: #1d6fe8;
+      transform: translateY(-1px);
+    }
+
+    .cadastre-link {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #000;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .cadastre-link:hover { 
+      text-decoration: underline; 
+      color: #e63946;
+    }
