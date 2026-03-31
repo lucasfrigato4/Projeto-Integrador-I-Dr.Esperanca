@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doutores de Esperança — Cadastro</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet"/>
+
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="../styles/cadastro.css"/>
+</head>
+<body>
+
+  <div class="frame-wrapper">
+
+    <!-- ── Borda TOPO ── -->
+    <div class="border-top-bar">
+      <div class="cb bt-laranja"></div>
+      <div class="cb bt-amarelo"></div>
+      <div class="cb bt-vermelho"></div>
+      <div class="cb bt-azul-s"></div>
+      <div class="cb bt-vermelho2"></div>
+      <div class="cb bt-azul2"></div>
+      <div class="cb bt-amarelo2"></div>
+      <div class="cb bt-azul3"></div>
+    </div>
+
+    <!-- ── LATERAIS + CONTEÚDO ── -->
+    <div class="border-sides">
+
+      <!-- Borda Esquerda -->
+      <div class="border-left">
+        <div class="cb bl-azul"></div>
+        <div class="cb bl-vermelho"></div>
+        <div class="cb bl-verde"></div>
+        <div class="cb bl-laranja"></div>
+        <div class="cb bl-amarelo"></div>
+        <div class="cb bl-azul2"></div>
+      </div>
+
+      <!-- ── CONTEÚDO INTERNO ── -->
+      <div class="inner-content">
+
+        <h1 class="page-title">É novo? <span>Cadastre-se</span> Abaixo</h1>
+
+        <div class="form-grid">
+
+          <!-- ════ COLUNA ESQUERDA ════ -->
+          <div class="col-left">
+
+            <!-- Nome Completo -->
+            <div class="field-group">
+              <label class="field-label" for="nome">
+                Nome Completo <span class="required">*</span>
+              </label>
+              <input type="text" id="nome" class="form-control" placeholder="" required/>
+            </div>
+
+            <!-- CPF -->
+            <div class="field-group">
+              <label class="field-label" for="cpf">
+                CPF <span class="required">*</span>
+              </label>
+              <input type="text" id="cpf" class="form-control" placeholder="000.000.000-00" maxlength="14" required/>
+            </div>
+
+            <!-- E-mail -->
+            <div class="field-group">
+              <label class="field-label" for="email">
+                E-mail <span class="required">*</span>
+              </label>
+              <input type="email" id="email" class="form-control" placeholder="fulano@gmail.com" required/>
+            </div>
+
+            <!-- Telefone -->
+            <div class="field-group">
+              <label class="field-label" for="telefone">
+                Telefone <span class="required">*</span>
+              </label>
+              <input type="tel" id="telefone" class="form-control" placeholder="(99) 9 9999-9999" maxlength="16" required/>
+            </div>
+
+            <!-- Senha -->
+            <div class="field-group">
+              <label class="field-label" for="senha">
+                Senha <span class="required">*</span>
+                <i class="help-icon" title="Mínimo 8 caracteres, letras e números">?</i>
+              </label>
+              <div class="input-icon-wrap">
+                <input type="password" id="senha" class="form-control" required/>
+                <button type="button" class="toggle-password" aria-label="Mostrar senha" onclick="toggleSenha('senha', this)">
+                  👁
+                </button>
+              </div>
+            </div>
+
+            <!-- Repita a Senha -->
+            <div class="field-group">
+              <label class="field-label" for="confirma-senha">
+                Repita a Senha <span class="required">*</span>
+              </label>
+              <input type="password" id="confirma-senha" class="form-control" required/>
+            </div>
+
+          </div><!-- /col-left -->
+
+          <!-- ════ COLUNA DIREITA ════ -->
+          <div class="col-right">
+
+            <!-- Polo -->
+            <div class="field-group">
+              <label class="field-label" for="polo">Polo</label>
+              <select id="polo" class="form-select">
+                <option value="" disabled selected></option>
+                <option value="polo1">Polo Norte</option>
+                <option value="polo2">Polo Sul</option>
+                <option value="polo3">Polo Leste</option>
+                <option value="polo4">Polo Oeste</option>
+                <option value="polo5">Polo Central</option>
+              </select>
+            </div>
+
+            <!-- Já realizou o treinamento? -->
+            <div class="field-group">
+              <p class="section-label">Já Realizou o Treinamento?</p>
+              <div class="radio-group horizontal">
+                <label class="radio-label">
+                  <input type="radio" name="treinamento" value="sim"/> SIM
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="treinamento" value="nao" checked/> NÃO
+                </label>
+              </div>
+            </div>
+
+            <!-- Função Pretendida -->
+            <div class="field-group">
+              <p class="section-label">
+                Função Pretendida
+                <i class="help-icon" title="Selecione sua função dentro da equipe" style="display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#e63946;color:#fff;font-size:10px;font-weight:900;cursor:pointer;font-style:normal;line-height:1;">?</i>
+              </p>
+              <div class="checkbox-group" id="funcoes">
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="musica" disabled/> MÚSICA
+                </label>
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="intercessao" disabled/> INTERCESSÃO
+                </label>
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="clown" disabled/> CLOWN
+                </label>
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="staff" disabled/> STAFF
+                </label>
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="comunicacao" disabled/> COMUNICAÇÃO
+                </label>
+                <label class="check-label disabled">
+                  <input type="checkbox" name="funcao" value="coordenacao" disabled/> COORDENAÇÃO
+                </label>
+              </div>
+            </div>
+
+            <!-- Sou Administrador -->
+            <div class="admin-row">
+              <p class="section-label">Sou Administrador</p>
+              <input type="checkbox" id="admin" name="admin"/>
+            </div>
+
+          </div><!-- /col-right -->
+
+        </div><!-- /form-grid -->
+
+        <!-- ── Rodapé ── -->
+        <div class="form-footer">
+          <p class="terms-text">
+            Ao preencher o formulário acima você<br>
+            concorda com nossos <a href="#">Termos de uso</a> e<br>
+            com nossas <a href="#">Políticas de privacidade</a>.
+          </p>
+          <button type="button" class="btn-cadastrar" onclick="cadastrar()">Cadastre-se</button>
+        </div>
+
+      </div><!-- /inner-content -->
+
+      <!-- Borda Direita -->
+      <div class="border-right">
+        <div class="cb br-amarelo"></div>
+        <div class="cb br-azul"></div>
+        <div class="cb br-vermelho"></div>
+        <div class="cb br-verde"></div>
+        <div class="cb br-laranja"></div>
+        <div class="cb br-amarelo2"></div>
+      </div>
+
+    </div><!-- /border-sides -->
+
+    <!-- ── Borda FUNDO ── -->
+    <div class="border-bottom-bar">
+      <div class="cb bb-azul"></div>
+      <div class="cb bb-vermelho"></div>
+      <div class="cb bb-laranja"></div>
+      <div class="cb bb-amarelo"></div>
+      <div class="cb bb-vermelho2"></div>
+      <div class="cb bb-azul2"></div>
+      <div class="cb bb-verde"></div>
+      <div class="cb bb-amarelo2"></div>
+      <div class="cb bb-azul3"></div>
+    </div>
+
+  </div><!-- /frame-wrapper -->
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    /* ── Máscara CPF ── */
+    document.getElementById('cpf').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g,'').slice(0,11);
+      if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
+      else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+      else if (v.length > 3) v = v.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+      e.target.value = v;
+    });
+
+    /* ── Máscara Telefone ── */
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g,'').slice(0,11);
+      if (v.length > 7) v = v.replace(/(\d{2})(\d{1})(\d{4})(\d{0,4})/, '($1) $2 $3-$4');
+      else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+      e.target.value = v;
+    });
+
+    /* ── Habilitar funções quando treinamento = SIM ── */
+    document.querySelectorAll('input[name="treinamento"]').forEach(function(r) {
+      r.addEventListener('change', function() {
+        const fez = this.value === 'sim';
+        document.querySelectorAll('#funcoes .check-label').forEach(function(l) {
+          const inp = l.querySelector('input');
+          if (fez) {
+            l.classList.remove('disabled');
+            inp.disabled = false;
+          } else {
+            l.classList.add('disabled');
+            inp.disabled = true;
+            inp.checked = false;
+          }
+        });
+      });
+    });
+
+    /* ── Toggle visibilidade senha ── */
+    function toggleSenha(id, btn) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = '🙈';
+      } else {
+        input.type = 'password';
+        btn.textContent = '👁';
+      }
+    }
+
+    /* ── Validação e envio ── */
+    function cadastrar() {
+      const nome   = document.getElementById('nome').value.trim();
+      const cpf    = document.getElementById('cpf').value.trim();
+      const email  = document.getElementById('email').value.trim();
+      const tel    = document.getElementById('telefone').value.trim();
+      const senha  = document.getElementById('senha').value;
+      const conf   = document.getElementById('confirma-senha').value;
+
+      if (!nome || !cpf || !email || !tel || !senha || !conf) {
+        alert('Preencha todos os campos obrigatórios!');
+        return;
+      }
+      if (senha !== conf) {
+        alert('As senhas não conferem!');
+        return;
+      }
+      if (senha.length < 8) {
+        alert('A senha deve ter ao menos 8 caracteres!');
+        return;
+      }
+      alert('Cadastro realizado com sucesso! ✅');
+    }
+  </script>
+
+</body>
+</html>
