@@ -73,3 +73,4 @@ Todos os voluntários devem atuar com respeito, ética e responsabilidade.
 * **Lucas Americano do Brasil Santos**
 * **Lucas Frigatto**
 * **Rafael Thiago Felix dos Santos**
+* **Kaio Castro**
